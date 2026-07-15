@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: black; */
+}
+body{
+    background-color: black;
+}
+img{
+    height: 90vh;
+    width: 80%;
+    margin-left: 180px;
+    margin-top: 50px;
+}
+.leftBtn{
+    height: 60px;
+    width: 60px;
+    padding: 2px 2px;
+    position: absolute;
+    top: 46%;
+    left: 1%;
+    border: none;
+    font-size: 30px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(255, 0, 0);
+}
+.rightBtn{
+    height: 60px;
+    width: 60px;
+    padding: 2px 2px;
+    position: absolute;
+    top: 46%;
+    left: 96%;
+    border: none;
+    font-size: 30px;
+    border-radius: 50%;
+   background-color: white;
+   color: rgb(255, 0, 0);
+}
