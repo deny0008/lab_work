@@ -112,6 +112,9 @@ document.querySelector('h3').onclick = function () {
 }
 
 
+
+
+
 var id;
 var second;
 let score = 0;
