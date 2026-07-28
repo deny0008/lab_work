@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+
+            <div class="logo">
+                <img src="asset/logo.png" alt="">
+            </div>
+
+            <div class="weather">
+
+                <div class="temp">
+                    <h1 id="temperature"></h1>
+                </div>
+
+                <div class="city">
+
+                    <h2 id="city">Seoul</h2>
+
+                    <p id="date">
+                        Saturday, 25 July 2026
+                    </p>
+
+                </div>
+
+                <div class="status">
+
+                    <img id="icon" src="https://openweathermap.org/img/wn/02d@2x.png">
+
+                    <h3 id="condition">
+                        Partly Cloudy
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="search-box">
+
+                <input type="text" placeholder="Search Location..." id="search">
+
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+            <div class="cities">
+
+                <p>Rajkot</p>
+                <p>maxico</p>
+                <p>dhari</p>
+                <p>farellones</p>
+
+            </div>
+
+            <hr>
+
+            <div class="details">
+
+                <h3>Weather Details</h3>
+
+                <div class="item">
+                    <span>Cloudy</span>
+                    <span id="cloud">75%</span>
+                </div>
+
+                <div class="item">
+                    <span>Humidity</span>
+                    <span id="humidity">75%</span>
+                </div>
+
+                <div class="item">
+                    <span>Wind</span>
+                    <span id="wind">15 km/h</span>
+                </div>
+
+                <div class="item">
+                    <span>Pressure</span>
+                    <span id="pressure">1012 hPa</span>
+                </div>
+
+            </div>
+
+            <div class="footer">
+
+                <p>
+                    Created 👑 by Denish Ranpariya
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="javascript/script.js"></script>
+
+</body>
+
+</html>
