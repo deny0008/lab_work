@@ -78,9 +78,6 @@ function getWeather(cityName) {
             }
 
         })
-        .catch(() => {
-            alert("Something went wrong!");
-        });
 }
 
 searchBtn.addEventListener("click", function () {
