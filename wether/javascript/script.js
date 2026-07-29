@@ -33,10 +33,7 @@ function getWeather(cityName) {
 
     const API = `https://api.weatherapi.com/v1/current.json?key=e26ee2f87b994c98863100552231608&q=${cityName}`;
 
-    fetch(API)
-        .then(res => res.json())
-        .then(data => {
-
+    fetch(API).then(res => res.json()).then(data => {
             if (data.error) {
                 alert("City Not Found");
                 return;
@@ -57,23 +54,23 @@ function getWeather(cityName) {
 
             const weatherCode = data.current.condition.code;
 
-            if (weatherCode === 1000) {
+            if (weatherCode == 1000) {
                 document.body.style.backgroundImage = "url('asset/sunny.jpg')";
             }
-            else if (weatherCode === 1003 || weatherCode === 1006 || weatherCode === 1009) {
+            else if (weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009) {
                 document.body.style.backgroundImage = "url('asset/cloud.jpg')";
             }
-            else if (weatherCode === 1063 || weatherCode === 1150 || weatherCode === 1153) {
+            else if (weatherCode == 1063 || weatherCode == 1150 || weatherCode == 1153) {
 
                 document.body.style.backgroundImage = "url('asset/rain.jpg')";
             }
-            else if (weatherCode === 1273 || weatherCode === 1276 || weatherCode === 1279) {
+            else if (weatherCode == 1273 || weatherCode == 1276 || weatherCode == 1279) {
                 document.body.style.backgroundImage = "url('asset/thunder.jpg')";
             }
-            else if (weatherCode === 1258 || weatherCode === 1255 || weatherCode === 1279 || weatherCode ===1213) {
+            else if (weatherCode == 1258 || weatherCode == 1255 || weatherCode == 1279 || weatherCode == 1213 || weatherCode == 1219) {
                 document.body.style.backgroundImage = "url('asset/snow.jpg')";
             }
-            else if (weatherCode === 1030 || weatherCode === 1135 || weatherCode === 1147) {
+            else if (weatherCode == 1030 || weatherCode == 1135 || weatherCode == 1147) {
                 document.body.style.backgroundImage = "url('asset/fog.jpg')";
             }
             else {
