@@ -18,7 +18,6 @@ body {
     color: var(--cream);
     font-family: 'Work Sans', sans-serif;
     min-height: 100vh;
-    /* padding-bottom: 60px; */
 
     background-image: url("../assets/mirchimasala.png");
     background-size: cover;
@@ -27,11 +26,11 @@ body {
     background-attachment: fixed;
 }
 
-  /* ---------- Header ---------- */
   header{
     text-align:center;
     padding:48px 20px 28px;
     position:relative;
+    
   }
 
   .eyebrow{
@@ -47,6 +46,7 @@ body {
     font-weight:700;
     font-size:clamp(32px,6vw,52px);
     margin:8px 0 6px;
+    background: rgba(75, 27, 27, 0.721);
   }
   header p{
     color:var(--muted);
@@ -56,14 +56,13 @@ body {
 
 
   .toolbar{
-    max-width:1100px;
     margin:0 auto 30px;
     padding:0 20px;
     display:flex;
     flex-wrap:wrap;
     gap:12px;
     align-items:center;
-    justify-content:space-between;
+    justify-content:space-evenly;
   }
 
   .filters{
@@ -82,6 +81,7 @@ body {
     font-family:inherit;
     font-size:14px;
     outline:none;
+    width: 400px;
   }
 
   .filters input{ min-width:200px; flex:1; }
@@ -104,19 +104,21 @@ body {
     letter-spacing:0.3px;
     box-shadow:var(--shadow);
     transition:transform .15s ease;
+    width: 300px;
   }
 
   .add-btn:hover{ transform:translateY(-2px); }
   .add-btn:focus-visible{ outline:3px solid var(--cream); outline-offset:2px; }
 
-  #productList{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 20px;
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
-    gap:26px;
-  }
+ #productList{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
 
   .card{
     background:var(--surface);

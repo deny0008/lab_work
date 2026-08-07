@@ -81,7 +81,7 @@ function closeModal() {
   editingId = null;
 }
 
-openModalBtn.addEventListener("click", () => openModal("add"));
+openModalBtn.addEventListener("click", addProductPrompt);
 cancelBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", (e) => {
   if (e.target === overlay) closeModal(); 
@@ -92,44 +92,71 @@ productForm.addEventListener("submit", function (e) {
   addProduct();
 });
 
-function addProduct() {
-  const title = titleInput.value.trim();
-  const price = parseFloat(priceInput.value);
-  const image = imageInput.value.trim() || "https://source.unsplash.com/400x300/?indian-food";
-  const category = categoryInput.value;
+function addProductPrompt() {
 
-  if (!title || isNaN(price) || price <= 0) {
-    formError.style.display = "block";
-    return;
-  }
-  formError.style.display = "none";
+    let title = prompt("Enter Product Name");
 
-  if (editingId) {
-    const product = products.find(p => p.id === editingId);
-    product.title = title;
-    product.price = price;
-    product.image = image;
-    product.category = category;
-  } else {
-    const newProduct = {
-      id: Date.now(),       
-      title,
-      price,
-      image,
-      category
+    if (title == null || title.trim() == "") return;
+
+    let image = prompt("Enter Product Image URL");
+
+    if (image == null || image.trim() == "") return;
+
+    let price = prompt("Enter Product Price");
+
+    if (price == null || isNaN(price) || Number(price) <= 0) return;
+
+    let category = prompt("Enter Product Category");
+
+    if (category == null || category.trim() == "") return;
+
+    let newProduct = {
+        id: Date.now(),
+        title: title,
+        image: image,
+        price: Number(price),
+        category: category
     };
-    products.push(newProduct);
-  }
 
-  saveProducts();
-  renderProducts();
-  closeModal();              
+    products.push(newProduct);
+
+    saveProducts();
+    renderProducts();
+
+    alert("Product Added Successfully ✅");
 }
 
-function deleteProduct(id) {
-  products = products.filter(p => p.id !== id);
-  saveProducts();
-  renderProducts();
+function editProduct(id) {
+
+    let product = products.find((item) => item.id === id);
+
+    if (!product) return;
+
+    let newTitle = prompt("Edit Product Name", product.title);
+
+    if (newTitle == null || newTitle.trim() === "") return;
+
+    let newImage = prompt("Edit Product Image", product.image);
+
+    if (newImage == null || newImage.trim() === "") return;
+
+    let newPrice = prompt("Edit Product Price", product.price);
+
+    if (newPrice == null || isNaN(newPrice) || Number(newPrice) <= 0) return;
+
+    let newCategory = prompt("Edit Product Category", product.category);
+
+    if (newCategory == null || newCategory.trim() === "") return;
+
+    product.title = newTitle;
+    product.image = newImage;
+    product.price = Number(newPrice);
+    product.category = newCategory;
+
+    saveProducts();
+    renderProducts();
+
+    alert("Product Edited Successfully ✅");
 }
 
 
@@ -181,7 +208,7 @@ function addProductToList(product) {
     </div>
   `;
 
-  card.querySelector(".edit-btn").addEventListener("click", () => openModal("edit", product));
+  card.querySelector(".edit-btn").addEventListener("click", () => editProduct(product.id));
   card.querySelector(".delete-btn").addEventListener("click", () => deleteProduct(product.id));
 
   productList.appendChild(card);
