@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirch Masala Dhaba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Mirch Masala Dhaba</div>
+  <h1>🧑‍🍳Mirch Masala Dhaba Menu👩‍🍳</h1>
+</header>
+
+<div class="toolbar">
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="Search dish by name...">
+    <select id="categoryFilter">
+      <option value="all">All categories</option>
+    </select>
+    <select id="sortSelect">
+      <option value="none">Sort by price</option>
+      <option value="lowhigh">Price: Low to High</option>
+      <option value="highlow">Price: High to Low</option>
+    </select>
+  </div>
+  <button class="add-btn" id="openModalBtn">+ Add Item</button>
+</div>
+
+<div id="productList"></div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h2 id="modalTitle">Add Menu Item</h2>
+    <form id="productForm">
+      <input type="hidden" id="productId">
+
+      <div class="field">
+        <label for="titleInput">Dish Title</label>
+        <input type="text" id="titleInput" placeholder="e.g. Paneer Tikka">
+      </div>
+
+      <div class="field">
+        <label for="priceInput">Price (₹)</label>
+        <input type="number" id="priceInput" placeholder="e.g. 220">
+        <div class="error-text" id="formError">Please enter both a title and a valid price.</div>
+      </div>
+
+      <div class="field">
+        <label for="imageInput">Image URL</label>
+        <input type="text" id="imageInput" placeholder="https://...">
+      </div>
+
+      <div class="field">
+        <label for="categoryInput">Category</label>
+        <select id="categoryInput">
+          <option value="Starters">Starters</option>
+          <option value="Main Course">Main Course</option>
+          <option value="Breads">Breads</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Beverages">Beverages</option>
+        </select>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+        <button type="submit" class="save-btn" id="saveBtn">Add Item</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h3>🌶️ Mirch Masala Dhaba</h3>
+      <p>Serving delicious and authentic Indian food with love and tradition.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>📍 Rajkot, Gujarat</p>
+      <p>📞 +91 98765 43210</p>
+      <p>📧 mirchmasaladhaba@gmail.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Opening Hours</h4>
+      <p>Monday - Sunday</p>
+      <p>11:00 AM - 11:00 PM</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Mirch Masala Dhaba. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="javascript/script.js"></script>
+</body>
+</html>
